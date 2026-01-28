@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creative Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">Portfolio</div>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#certificates" class="nav-link">Certificates</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="wave">👋</span> Hi, I'm
+          <span class="gradient-text">Jojie Mae</span>
+        </h1>
+        <p class="hero-subtitle">Creative Developer & Designer</p>
+        <p class="hero-description"></p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="floating-card">
+          <img
+            src="Profile_image/anime.jpg"
+            alt="Jojie Mae - Creative Developer"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-image">
+            <div class="about-decoration">
+              <div class="decoration-circle circle-1"></div>
+              <div class="decoration-circle circle-2"></div>
+              <div class="decoration-circle circle-3"></div>
+              <div class="image-placeholder">
+                <img
+                  src="Profile_image/profile.jpg"
+                  alt="Jojie Mae Profile Picture"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="about-text">
+            <h3 class="about-role">IT Student & Web Developer</h3>
+            <p class="about-intro">
+              <i class="fas fa-code about-icon"></i>
+              Passionate about creating innovative digital solutions and
+              transforming ideas into functional, user-friendly applications.
+              Currently pursuing my degree in Information Technology while
+              gaining hands-on experience in web development and cybersecurity.
+            </p>
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <i class="fas fa-laptop-code"></i>
+                <div>
+                  <h4>Technical Skills</h4>
+                  <p>
+                    Currently learning HTML, CSS, JavaScript, and exploring more modern web technologies
+                  </p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fas fa-graduation-cap"></i>
+                <div>
+                  <h4>Continuous Learning</h4>
+                  <p>
+                    Actively pursuing certifications and staying updated with
+                    industry trends
+                  </p>
+                </div>
+             
+            </div>
+            <div class="about-stats">
+              <div class="stat-item">
+                <i class="fas fa-award stat-icon"></i>
+                <h3>3+</h3>
+                <p>Certifications</p>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-project-diagram stat-icon"></i>
+                <h3>0</h3>
+                <p>Projects</p>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-code stat-icon"></i>
+                <h3>0</h3>
+                <p>Years Learning</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="projects">
+      <div class="container">
+        <h2 class="section-title">Certifications</h2>
+        <div class="projects-grid">
+          <div class="project-card certificate-card">
+            <div class="project-image">
+              <img
+                src="Profile_image/Certifications_image/certificate01.jpg"
+                alt="Cybersecurity Awareness Certificate"
+                class="certificate-img"
+                onclick="viewCertificate(this)"
+                style="cursor: pointer;"
+              />
+              <div class="project-overlay">
+                <button
+                  class="project-link view-btn"
+                  onclick="viewCertificate(this.closest('.project-card').querySelector('.certificate-img'))"
+                  title="View Certificate"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+                <a
+                  href="Profile_image/Certifications_image/certificate01.jpg"
+                  download
+                  class="project-link"
+                  title="Download Certificate"
+                  ><i class="fas fa-download"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>
+                <i class="fas fa-certificate cert-icon"></i>Cybersecurity
+                Awareness
+              </h3>
+              <p>3-hour information session conducted by DICT region VI</p>
+              <div class="project-tags">
+                <span>Cybersecurity</span>
+                <span>DICT</span>
+                <span>2025</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card certificate-card">
+            <div class="project-image">
+              <img
+                src="Profile_image/Certifications_image/certificate02.jpg"
+                alt="Google DevFest Certificate"
+                class="certificate-img"
+                onclick="viewCertificate(this)"
+                style="cursor: pointer;"
+              />
+              <div class="project-overlay">
+                <button
+                  class="project-link view-btn"
+                  onclick="viewCertificate(this.closest('.project-card').querySelector('.certificate-img'))"
+                  title="View Certificate"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+                <a
+                  href="Profile_image/Certifications_image/certificate02.jpg"
+                  download
+                  class="project-link"
+                  title="Download Certificate"
+                  ><i class="fas fa-download"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>
+                <i class="fas fa-certificate cert-icon"></i>Google DevFest
+              </h3>
+              <p>
+                Dive into the exciting world of Google Developer technologies
+              </p>
+              <div class="project-tags">
+                <span>Google Cloud</span>
+                <span>DevFest</span>
+                <span>2025</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card certificate-card">
+            <div class="project-image">
+              <img
+                src="Profile_image/Certifications_image/certificate03.jpg"
+                alt="The Digital Foundation Certificate"
+                class="certificate-img"
+                onclick="viewCertificate(this)"
+                style="cursor: pointer;"
+              />
+              <div class="project-overlay">
+                <button
+                  class="project-link view-btn"
+                  onclick="viewCertificate(this.closest('.project-card').querySelector('.certificate-img'))"
+                  title="View Certificate"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+                <a
+                  href="Profile_image/Certifications_image/certificate03.jpg"
+                  download
+                  class="project-link"
+                  title="Download Certificate"
+                  ><i class="fas fa-download"></i
+                ></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>
+                <i class="fas fa-certificate cert-icon"></i>The Digital
+                Foundation
+              </h3>
+              <p>USLS Isaca Student Group</p>
+              <div class="project-tags">
+                <span>Digital Skills</span>
+                <span>USLS</span>
+                <span>ISACA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i class="fab fa-html5"></i>
+            <h3>HTML5</h3>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 30%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-css3-alt"></i>
+            <h3>CSS3</h3>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 30%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-js"></i>
+            <h3>JavaScript</h3>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 26%"></div>
+            </div>
+        
+          </div>
+          <div class="skill-card">
+            <i class="fab fa-node-js"></i>
+            <h3>Node.js</h3>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 25%"></div>
+            </div>
+          </div>
+          <div class="skill-card">
+            <i class="fas fa-database"></i>
+            <h3>Database</h3>
+            <div class="skill-bar">
+              <div class="skill-progress" style="width: 25%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h3>Email</h3>
+                <p>jojiemaetapang65@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h3>Phone</h3>
+                <p>+63 9753893915</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h3>Location</h3>
+                <p>Linaon Cauayan, Philippines</p>
+              </div>
+            </div>
+            <div class="social-links">
+              <a href="https://github.com/Jeng2010" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/jojie-mae-tapang-b683b0383?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="https://www.facebook.com/jojiemae.tapang"
+                 target="_blank""><i class="fab fa-facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/vibewithjojie?igsh=NmZlb2Vkbm1rZzFx&utm_source=qr"
+                 target="_blank"><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <form class="contact-form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        &copy; 2026 Jojie Mae Tapang.
+        <i class="fas fa-heart"></i>
+      </p>
+    </footer>
+
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="modal">
+      <span class="modal-close">&times;</span>
+      <img class="modal-content" id="modalImage">
+      <div id="caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
