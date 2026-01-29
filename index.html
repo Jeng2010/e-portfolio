@@ -10,7 +10,22 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
-  <body>
+  <body data-theme="light">
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+      <div class="loader">
+        <div class="loader-circle"></div>
+        <div class="loader-text">Jojie Mae</div>
+      </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-follower"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-container">
@@ -22,6 +37,10 @@
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+        </button>
         <div class="hamburger">
           <span></span>
           <span></span>
@@ -32,15 +51,24 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+      <div class="animated-background">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+      </div>
       <div class="hero-content">
         <h1 class="hero-title">
           <span class="wave">👋</span> Hi, I'm
           <span class="gradient-text">Jojie Mae</span>
         </h1>
-        <p class="hero-subtitle">Creative Developer & Designer</p>
+        <p class="hero-subtitle">
+          <span class="typing-text"></span>
+          <span class="typing-cursor">|</span>
+        </p>
         <p class="hero-description"></p>
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
+        <div class="hero-buttons"><a href="#certificates" class="btn btn-primary">Explore More</a>
           <a href="#contact" class="btn btn-secondary">Get in Touch</a>
         </div>
       </div>
@@ -53,6 +81,13 @@
         </div>
       </div>
     </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+      </svg>
+    </div>
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -73,7 +108,7 @@
             </div>
           </div>
           <div class="about-text">
-            <h3 class="about-role">IT Student & Web Developer</h3>
+            <h3 class="about-role">BS in Information Technology</h3>
             <p class="about-intro">
               <i class="fas fa-code about-icon"></i>
               Passionate about creating innovative digital solutions and
@@ -124,6 +159,61 @@
       </div>
     </section>
 
+    <!-- Wave Divider -->
+    <div class="wave-divider wave-divider-flip">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+      </svg>
+    </div>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+      <div class="container">
+        <h2 class="section-title">My Journey</h2>
+        <div class="timeline">
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2025</div>
+              <h3>Google DevFest</h3>
+              <p>Participated in Google Developer technologies event</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2025</div>
+              <h3>Cybersecurity Awareness Training</h3>
+              <p>Completed 3-hour information session by DICT Region VI</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-right">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">2024+</div>
+              <h3>BS Information Technology</h3>
+              <p>Currently pursuing degree with focus on web development</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-aos="fade-left">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-date">Ongoing</div>
+              <h3>Learning Journey</h3>
+              <p>Continuously expanding skills in HTML, CSS, JavaScript, and modern web technologies</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+      </svg>
+    </div>
+
     <!-- Certificates Section -->
     <section id="certificates" class="projects">
       <div class="container">
@@ -162,9 +252,9 @@
               </h3>
               <p>3-hour information session conducted by DICT region VI</p>
               <div class="project-tags">
-                <span>Cybersecurity</span>
-                <span>DICT</span>
-                <span>2025</span>
+                <span class="tag-clickable" data-tag="cybersecurity">Cybersecurity</span>
+                <span class="tag-clickable" data-tag="dict">DICT</span>
+                <span class="tag-clickable" data-tag="2025">2025</span>
               </div>
             </div>
           </div>
@@ -203,9 +293,9 @@
                 Dive into the exciting world of Google Developer technologies
               </p>
               <div class="project-tags">
-                <span>Google Cloud</span>
-                <span>DevFest</span>
-                <span>2025</span>
+                <span class="tag-clickable" data-tag="google-cloud">Google Cloud</span>
+                <span class="tag-clickable" data-tag="devfest">DevFest</span>
+                <span class="tag-clickable" data-tag="2025">2025</span>
               </div>
             </div>
           </div>
@@ -243,9 +333,9 @@
               </h3>
               <p>USLS Isaca Student Group</p>
               <div class="project-tags">
-                <span>Digital Skills</span>
-                <span>USLS</span>
-                <span>ISACA</span>
+                <span class="tag-clickable" data-tag="digital-skills">Digital Skills</span>
+                <span class="tag-clickable" data-tag="usls">USLS</span>
+                <span class="tag-clickable" data-tag="isaca">ISACA</span>
               </div>
             </div>
           </div>
@@ -361,6 +451,11 @@
       <img class="modal-content" id="modalImage">
       <div id="caption"></div>
     </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
   </body>
