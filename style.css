@@ -1618,7 +1618,8 @@ html {
 /* Contact Section */
 .contact {
   padding: 100px 20px;
-  background: #e5e7eb;
+  background: var(--bg-secondary);
+  transition: background 0.3s ease;
 }
 
 .contact-content {
@@ -1627,19 +1628,46 @@ html {
   gap: 3rem;
 }
 
+.contact-info {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px var(--shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+.contact-info:hover {
+  box-shadow: 0 15px 40px var(--shadow);
+  transform: translateY(-5px);
+}
+
 .contact-item {
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateX(5px);
 }
 
 .contact-item i {
   font-size: 1.5rem;
   color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover i {
+  transform: scale(1.2) rotate(5deg);
 }
 
 .contact-item h3 {
   margin-bottom: 0.5rem;
+  color: var(--text-primary);
 }
 
 .contact-item p {
@@ -1779,9 +1807,10 @@ html {
 .footer {
   padding: 2rem;
   text-align: center;
-  background: #f3f4f6;
+  background: var(--bg-primary);
   color: var(--text-secondary);
-  border-top: 1px solid #3b82f6;
+  border-top: 1px solid var(--primary-color);
+  transition: background 0.3s ease;
 }
 
 .footer i {
