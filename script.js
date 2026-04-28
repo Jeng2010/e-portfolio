@@ -622,12 +622,9 @@ function setupOjtImageFallbacks() {
     const compactFileName = fileName.replace(/^ojt0/, "ojt");
     const compactFolderSrc = `ojt_image/${compactFileName}`;
     const compactRootSrc = compactFileName;
-    const candidates = [...new Set([
-      folderSrc,
-      rootSrc,
-      compactFolderSrc,
-      compactRootSrc,
-    ])];
+    const candidates = [
+      ...new Set([folderSrc, rootSrc, compactFolderSrc, compactRootSrc]),
+    ];
     const downloadLink = img.closest(".ojt-card")?.querySelector("a[download]");
 
     let candidateIndex = 0;
