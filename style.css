@@ -1299,6 +1299,10 @@ html {
   animation-delay: 0.5s;
 }
 
+.certificate-card:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
 .certificate-card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
