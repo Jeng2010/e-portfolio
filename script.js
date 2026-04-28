@@ -617,14 +617,18 @@ function setupOjtImageFallbacks() {
   ojtImages.forEach((img) => {
     const originalSrc = img.getAttribute("src");
     const fileName = originalSrc.split("/").pop();
-    const rootSrc = fileName;
-    const folderSrc = `ojt_image/${fileName}`;
-    const compactFileName = fileName.replace(/^ojt0/, "ojt");
-    const compactFolderSrc = `ojt_image/${compactFileName}`;
-    const compactRootSrc = compactFileName;
+
+    // Build candidates with different path variations
     const candidates = [
-      ...new Set([folderSrc, rootSrc, compactFolderSrc, compactRootSrc]),
+      originalSrc, // Try original path first: Profile_image/ojt_image/ojt01.jpg
+      `Profile_image/ojt_image/${fileName}`, // Standard path
+      `ojt_image/${fileName}`, // Root ojt_image folder
+      fileName, // Root folder
     ];
+
+    // Remove duplicates while maintaining order
+    const uniqueCandidates = [...new Set(candidates)];
+
     const downloadLink = img.closest(".ojt-card")?.querySelector("a[download]");
 
     let candidateIndex = 0;
@@ -632,10 +636,10 @@ function setupOjtImageFallbacks() {
     const tryNextCandidate = () => {
       candidateIndex += 1;
 
-      if (candidateIndex < candidates.length) {
-        img.src = candidates[candidateIndex];
+      if (candidateIndex < uniqueCandidates.length) {
+        img.src = uniqueCandidates[candidateIndex];
         if (downloadLink) {
-          downloadLink.href = candidates[candidateIndex];
+          downloadLink.href = uniqueCandidates[candidateIndex];
         }
         return;
       }
@@ -645,9 +649,9 @@ function setupOjtImageFallbacks() {
     };
 
     img.onerror = tryNextCandidate;
-    img.src = candidates[candidateIndex];
+    img.src = uniqueCandidates[candidateIndex];
     if (downloadLink) {
-      downloadLink.href = candidates[candidateIndex];
+      downloadLink.href = uniqueCandidates[candidateIndex];
     }
   });
 }
