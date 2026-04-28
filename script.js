@@ -591,6 +591,72 @@ function viewCertificate(img) {
   document.body.style.overflow = "hidden";
 }
 
+function createOjtPlaceholder(label) {
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+      <defs>
+        <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0%" stop-color="#dbeafe"/>
+          <stop offset="100%" stop-color="#bfdbfe"/>
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="800" rx="36" fill="url(#g)"/>
+      <rect x="80" y="80" width="1040" height="640" rx="28" fill="#ffffff" fill-opacity="0.55"/>
+      <circle cx="600" cy="330" r="92" fill="#60a5fa" fill-opacity="0.18"/>
+      <path d="M548 345l36 36 68-78" fill="none" stroke="#2563eb" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="600" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" fill="#1e3a8a" font-weight="700">${label}</text>
+      <text x="600" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#475569">Image not found</text>
+    </svg>`;
+
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
+
+function setupOjtImageFallbacks() {
+  const ojtImages = document.querySelectorAll(".ojt-img");
+
+  ojtImages.forEach((img) => {
+    const originalSrc = img.getAttribute("src");
+    const fileName = originalSrc.split("/").pop();
+    const rootSrc = fileName;
+    const folderSrc = `ojt_image/${fileName}`;
+    const compactFileName = fileName.replace(/^ojt0/, "ojt");
+    const compactFolderSrc = `ojt_image/${compactFileName}`;
+    const compactRootSrc = compactFileName;
+    const candidates = [...new Set([
+      folderSrc,
+      rootSrc,
+      compactFolderSrc,
+      compactRootSrc,
+    ])];
+    const downloadLink = img.closest(".ojt-card")?.querySelector("a[download]");
+
+    let candidateIndex = 0;
+
+    const tryNextCandidate = () => {
+      candidateIndex += 1;
+
+      if (candidateIndex < candidates.length) {
+        img.src = candidates[candidateIndex];
+        if (downloadLink) {
+          downloadLink.href = candidates[candidateIndex];
+        }
+        return;
+      }
+
+      img.src = createOjtPlaceholder(img.alt || `OJT Image ${fileName}`);
+      img.classList.add("ojt-placeholder");
+    };
+
+    img.onerror = tryNextCandidate;
+    img.src = candidates[candidateIndex];
+    if (downloadLink) {
+      downloadLink.href = candidates[candidateIndex];
+    }
+  });
+}
+
+setupOjtImageFallbacks();
+
 // Close modal
 const modal = document.getElementById("certificateModal");
 const closeBtn = document.querySelector(".modal-close");
