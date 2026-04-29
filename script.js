@@ -19,51 +19,6 @@ window.addEventListener("scroll", () => {
   scrollProgress.style.width = scrollPercentage + "%";
 });
 
-// Custom Cursor
-const cursor = document.querySelector(".custom-cursor");
-const follower = document.querySelector(".custom-cursor-follower");
-
-let mouseX = 0,
-  mouseY = 0;
-let followerX = 0,
-  followerY = 0;
-
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-
-  cursor.style.left = mouseX + "px";
-  cursor.style.top = mouseY + "px";
-});
-
-function animateFollower() {
-  const dx = mouseX - followerX;
-  const dy = mouseY - followerY;
-
-  followerX += dx * 0.1;
-  followerY += dy * 0.1;
-
-  follower.style.left = followerX + "px";
-  follower.style.top = followerY + "px";
-
-  requestAnimationFrame(animateFollower);
-}
-
-animateFollower();
-
-// Cursor hover effects
-const hoverElements = document.querySelectorAll(
-  "a, button, .btn, .project-card, .skill-card, .tag-clickable",
-);
-hoverElements.forEach((el) => {
-  el.addEventListener("mouseenter", () => {
-    follower.classList.add("active");
-  });
-  el.addEventListener("mouseleave", () => {
-    follower.classList.remove("active");
-  });
-});
-
 // Dark/Light Mode Toggle
 const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
@@ -195,18 +150,6 @@ style.textContent = `
   }
 `;
 document.head.appendChild(style);
-
-// Parallax Effect for Shapes
-window.addEventListener("scroll", () => {
-  const shapes = document.querySelectorAll(".shape");
-  const scrolled = window.pageYOffset;
-
-  shapes.forEach((shape, index) => {
-    const speed = 0.5 + index * 0.1;
-    const yPos = -(scrolled * speed);
-    shape.style.transform = `translateY(${yPos}px) rotate(${scrolled * 0.05}deg)`;
-  });
-});
 
 // ==================== END NEW FEATURES ====================
 
